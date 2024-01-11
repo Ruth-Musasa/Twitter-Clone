@@ -1,14 +1,10 @@
-import { useState } from 'react'
-import { NavBar } from './component/NavBar'
-import Header from './component/Header'
-import TweetEditor from './component/TweetEditor'
-import Tweet from './component/Tweet'
 import TrendingList from './component/TrendingList'
 import ContendTrend from './component/ContendTrend'
 import FollowList from './component/FollowList'
 import Home from './Menu/Home'
 import { ElementNav } from './component/NavBar'
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
+import SearchTweet from './component/SearchTweet'
 export default function App() {
   return (
     <>
@@ -32,7 +28,7 @@ export default function App() {
         <Home />
         <div className='flex-auto w-3/12 p-4 ml-10'>
           <div className='fixed'>
-            <input type="search" name="search" id="search" className='bg-zinc-800 w-full h-11 rounded-full text-center' placeholder='Serach Twitter' />
+            <SearchTweet />
             <ContendTrend name='Trends for you' icon='yes'>
               <TrendingList />
               <TrendingList />
