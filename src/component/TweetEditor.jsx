@@ -6,7 +6,7 @@ export default function TweetEditor(props) {
                 <img src="src/assets/profile-pic(1).png" alt="Photo_utilisateur" className="rounded-full h-12 w-12" />
             </div>
             <div className="flex-auto w-[85%]">
-                <div className="h-3/5"> <textarea placeholder="What’s happening?" name="text" id='text' cols="30" rows="10" className="w-full h-5/6 bg-black text-xl focus:border-blue-400"></textarea>
+                <div className="h-3/5"> <textarea placeholder="What’s happening?" name="text" id='text' cols="30" rows="10" className="w-full h-5/6 bg-black text-xl focus:border-blue-400 outline-none"></textarea>
                 </div>
                 <div className="flex justify-between ">
                     <div className="flex justify-between" >

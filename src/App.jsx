@@ -5,6 +5,8 @@ import Home from './Menu/Home'
 import { ElementNav } from './component/NavBar'
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
 import SearchTweet from './component/SearchTweet'
+import { Component } from 'react'
+import Profil from './component/Profil'
 export default function App() {
   return (
     <>
@@ -22,6 +24,7 @@ export default function App() {
               <Link to='/Profile'>   <ElementNav title='Profile' source='src/assets/Icons/Profile.svg' /></Link>
               <Link to='/More'>   <ElementNav title='More' source='src/assets/Icons/More.svg' /></Link>
               <button type="button" className='btn-primary h-14 w-56 text-lg font-bold'>Tweet</button>
+              <Profil />
             </div>
           </Router>
         </div>
@@ -33,13 +36,16 @@ export default function App() {
               <TrendingList />
               <TrendingList />
               <TrendingList />
-              <TrendingList />
             </ContendTrend>
             <ContendTrend name='Who to follow'>
-              <FollowList src='src/assets/image 1.png' name='The New York Times' link='@nyTimes' />
-              <FollowList src='src/assets/Profile-Photo (1).svg' name='CNN' link='@CNN' />
-              <FollowList src='src/assets/Profile-Photo (1).svg' name='CNN' link='@CNN' />
+              <FollowList src='src/assets/image 1.png' name='The New York Times' link='@nyTimes' btn='yes' />
+              <FollowList src='src/assets/Profile-Photo (1).svg' name='CNN' link='@CNN' btn='yes' />
+              <FollowList src='src/assets/Profile-Photo (1).svg' name='CNN' link='@CNN' btn='yes' />
             </ContendTrend>
+            <div className='text-zinc-500 text-sm text-justify p-4'>
+              Terms of Service  Privacy Policy  Cookie Policy <br />
+              Imprint Ads info More ... © 2021  Twitter, Inc.
+            </div>
           </div>
         </div>
       </div>
