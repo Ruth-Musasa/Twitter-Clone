@@ -32,7 +32,7 @@ export default function Tweet({ tweets }) {
                                 </div>
                                 <div><p className=" py-3 text-zinc-300 text-base leading-5"> {tweet.text} </p></div>
                                 {(tweet.image) && <img src={tweet.image} alt="Photo_utilisateur" className=" max-h-96 rounded-lg" />}
-                                <TweetAction comment={tweet.replies ?? user.replies} repost={tweet.retweets ?? user.retweets} like={tweet.favorites ?? user.favorites} />
+                                <TweetAction comment={tweet.replies ?? user.replies} repost={tweet.retweets ?? user.retweets} like={tweet.favorites ?? user.favorites}  />
                             </div>
                         </div>
                     )
