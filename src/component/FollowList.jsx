@@ -7,9 +7,9 @@ export default function FollowList(props) {
                     <div>{props.name}</div>
                     <span className="text-zinc-500">{props.link} </span>
                 </div>
-                <img src={props.private ?? 'src/assets/Icons/Verified.svg'} alt="" className="h-5" />
+                <img src={props.private ?? 'src/assets/Icons/Verified.svg'} alt="" className="h-5 md:hidden" />
             </div>
-            <div>
+            <div className="">
                 {(props.btn) && <button type="submit" className="w-20 h-8 bg-white text-black rounded-full shadow-md hover:bg-black-600 hover:bg-stone-400"> Follow</button>}
                 {(!props.btn) && <button type="button"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M5 14C6.10457 14 7 13.1046 7 12C7 10.8954 6.10457 10 5 10C3.89543 10 3 10.8954 3 12C3 13.1046 3.89543 14 5 14Z" fill="#D9D9D9" />

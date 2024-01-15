@@ -9,8 +9,8 @@ import Profil from './Menu/Profil'
 import TweetEditor from './component/TweetEditor'
 export default function App() {
   return (
-    <div className='flex text-[white] mx-[15%] flex-wrap'>
-      <div className='flex w-8/12 justify-between'>
+    <div className='flex text-[white] mx-[15%] xl:mx-12 '>
+      <div className='flex w-8/12 justify-between '>
         <Router>
           <div className="flex flex-col pt-4 w-1/4 ">
             <div className='fixed space-y-52'>
@@ -22,8 +22,8 @@ export default function App() {
               <Link to='/Bookmarks'>  <ElementNav title='Bookmarks' source='src/assets/Icons/Bookmarks.svg' /></Link>
               <Link to='/List'>  <ElementNav title='List' source='src/assets/Icons/Lists.svg' /></Link>
               <Link to='/Profile'>   <ElementNav title='Profile' source='src/assets/Icons/Profile.svg' /></Link>
-              <Link to='/More'>   <ElementNav title='More' source='src/assets/Icons/More.svg' /></Link>
-              <Link to='/Tweet'><button type="button" className='btn-primary h-14 w-56 text-lg font-bold'>Tweet</button></Link>
+              <Link to='/More'>   <ElementNav title='More' source='src/assets/Icons/More.svg' /> </Link>
+              <Link to='/Tweet'><button type="button" className='btn-primary h-14 w-56 text-lg font-bold xl:w-40'>Tweet</button></Link>
               <div>
                 <Link to='/Profile'>  <FollowList src="src/assets/profile-pic(1).png" classe="h-full bottom-0 left-0" name='Ruth Musasa' link='@R_Muss' private='src/assets/Icons/Private.svg' /></Link>
               </div>
@@ -36,7 +36,7 @@ export default function App() {
           </Routes>
         </Router>
       </div>
-      <div className='flex-auto  p-4 ml-6'>
+      <div className='flex-auto w-3/12  p-4 ml-6'>
         <div className='fixed'>
           <SearchTweet />
           <ContendTrend name='Trends for you' icon='yes'>
@@ -50,8 +50,7 @@ export default function App() {
             <FollowList src='src/assets/Profile-Photo (1).svg' name='CNN' link='@CNN' btn='yes' />
           </ContendTrend>
           <div className='text-zinc-500 text-sm text-justify p-4'>
-            Terms of Service  Privacy Policy  Cookie Policy <br />
-            Imprint Ads info More ... © 2021  Twitter, Inc.
+            Terms of Service  Privacy Policy  Cookie Policy <br /> Imprint Ads info More ... © 2021  Twitter, Inc.
           </div>
         </div>
       </div>

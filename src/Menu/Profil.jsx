@@ -1,25 +1,26 @@
 import ContendTrend from "../component/ContendTrend"
 import FollowList from "../component/FollowList"
 import Tweet from "../component/Tweet"
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
 export default function Profil(user) {
     return (
         <div className="w-full ml-24 h-full " >
-            <div className="flex space-x-4 border-x-[1px] border-b-[1px] border-gray-500 p-4">
-                <img src="src/assets/Icons/Reply.svg" alt="" />
+            <div className="flex space-x-4 border-x-[1px] border-b-[1px] border-gray-900 p-4">
+                <a href='/'><img src="src/assets/Icons/Reply.svg" alt="" /></a>
                 <div>
                     <h2>Ruth Musasa</h2>
                     <span className="text-zinc-500">1 post</span>
                 </div>
             </div>
-            <div className="bg-gray h-52 border-x-[1px] border-b-[1px] border-gray-500 bg-stone-800">
-
+            <div className="bg-gray h-52 border-x-[1px] border-b-[1px] border-gray-900 bg-stone-800  bg-center">
+                <img src="src/assets/Img.png" className=" h-52 w-full" alt="photo de couverture" />
             </div>
-            <div className=" border-x-[1px] border-b-[1px] border-gray-500 space-y-3.5 px-6">
+            <div className=" border-x-[1px] border-b-[1px] border-gray-900 space-y-3.5 px-6">
                 <div className="flex justify-between">
                     <div className="h-36 w-36 mt-[-72px] ">
                         <img src="src/assets/profile-pic(1).png" alt="" />
                     </div>
-                    <button className="w-28 h-9 border-[1px] rounded-full shadow-md hover:bg-zinc-800 border-gray-500 mt-4 " type="button">Edit profil</button>
+                    <button className="w-28 h-9 border-[1px] rounded-full shadow-md hover:bg-zinc-800 border-gray-900 mt-4 " type="button">Edit profil</button>
                 </div>
                 <h2>Ruth Musasa</h2>
                 <span className="text-zinc-500">@R_Muss</span>
@@ -36,15 +37,22 @@ export default function Profil(user) {
                             </clipPath>
                         </defs>
                     </svg>
-
                     <span> Joined January 2024</span>
                 </div>
                 <div className="flex space-x-4 pb-4">
                     <span className="flex text-zinc-500"> <strong >50 </strong> Following</span>
                     <span className="flex text-zinc-500"><strong>12K </strong> Followers</span>
                 </div>
+                <div className="flex justify-around ">
+                    <Link href='/Posts'>Posts </Link>
+
+                    <a href='/Replies'>Replies</a>
+                    <span>Highlight</span>
+                    <span>Medias</span>
+                    <span>Likes</span>
+                </div>
             </div>
-            <div className=" border-x-[1px] border-b-[1px] border-gray-500 p-4">
+            <div className="border-x-[1px] border-b-[1px] border-gray-900 p-4">
                 <FollowList src='src/assets/image 1.png' name='The New York Times' link='@nyTimes' btn='yes' />
                 <FollowList src='src/assets/Profile-Photo (1).svg' name='CNN' link='@CNN' btn='yes' />
                 <FollowList src='src/assets/Profile-Photo (1).svg' name='CNN' link='@CNN' btn='yes' />

@@ -14,7 +14,7 @@ export default function Home() {
         setTweets([tweet, ...tweets])
     }
     return (
-        <div className='flex-auto w-5/12 h-2/4 ml-6'>
+        <div className='flex-auto w-5/12 h-2/4 ml-6 md:ml-1'>
             <Header name='Home' src='src/assets/Icons/Timeline-Prop.svg' />
             <form onSubmit={handleSubmit} >
                 <TweetEditor />
