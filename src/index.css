@@ -7,6 +7,6 @@
     @apply w-20 bg-sky-500 text-white rounded-full shadow-md hover:bg-blue-600;
   }
   .borderContent{
-    @apply flex justify-between border-x-[1px] border-b-[1px] border-gray-500 p-2  ;
+    @apply flex justify-between border-x-[1px] border-b-[1px] border-gray-500 p-4  ;
   }
 }

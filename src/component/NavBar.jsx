@@ -1,6 +1,6 @@
 export function NavBar() {
     return (
-        <div className="flex flex-col pt-4 fixed">
+        <div className="flex flex-col pt-8 fixed">
             <ElementNav source='src/assets/Icons/Twitter.svg' />
             <ElementNav title='Home' source='src/assets/Icons/Home-Fill.svg' />
             <ElementNav title='Explore' source='src/assets/Icons/Explore.svg' />
@@ -18,9 +18,9 @@ export function NavBar() {
 export function ElementNav(props) {
     return (
         <div>
-            <div className="flex h-14 font-bold text-xl">
+            <div className="flex h-16 font-bold text-xl rounded-full hover:bg-stone-950 ">
                 <img className="h-6 " src={props.source} alt="" />
-                <h3 className="pl-1.5">{props.title} </h3>
+                <h3 className="pl-7">{props.title} </h3>
             </div>
             <section>
                 {props.children}

@@ -12,7 +12,7 @@ export default function ContendTrend(props) {
             </div>
             {props.children}
             <div className="pt-4 text-sky-500">
-                <button className="text-base font-bold">Show more</button>
+                <button className="text-base font-bold hover:text-blue-800">Show more</button>
             </div>
         </div>
     )

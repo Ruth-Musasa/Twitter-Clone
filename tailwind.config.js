@@ -8,6 +8,7 @@ export default {
     extend: {
       margin: {
         '15%': '15%',
+        '-72px':'-72px'
       },
       border: {
         '1px': '1px',
