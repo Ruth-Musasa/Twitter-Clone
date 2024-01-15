@@ -1,8 +1,14 @@
 import tweetsFake from '/src/assets/tweets-x.json'
 import React, { useState } from 'react';
-export default function TweetAction(props ) {
+export default function TweetAction(props) {
     const [count, setCount] = useState(props.like);
     const [decount, setDecount] = useState(true);
+    function propsTraitement(props) {
+        if (props > 1000) {
+            return (`${Math.round(props / 1000)} k`)
+        }
+        return props
+    }
     function likess() {
         if (decount) {
             setCount(count + 1)
@@ -11,25 +17,25 @@ export default function TweetAction(props ) {
             setCount(count - 1)
             setDecount(true)
         }
-        
+
     }
     return (
         <div className="flex justify-between text-gray-500 text-xs text-center py-2.5" >
             <div className="flex w-[25%] ">
                 <button> <img src="src/assets/Icons/Reply.svg" alt="" /></button>
-                <span className="pl-3.5 pt-1.5" >{props.comment} </span>
+                <span className="pl-3.5 pt-1.5" > {propsTraitement(props.comment)}</span>
             </div>
             <div className="flex w-[25%]"> <button><img src="src/assets/Icons/Retweet.svg" alt="" /></button>
-                <span className="pl-3.5 pt-1.5">{props.repost}</span>
+                <span className="pl-3.5 pt-1.5"> {propsTraitement(props.repost)}</span>
             </div>
-            <Like likess={likess} count={count} decount={decount}/>
+            <Like likess={likess} count={count} decount={decount} />
             <div className="flex w-[25%] "> <button> <img src="src/assets/Icons/Share.svg" alt="" /></button>
             </div>
         </div>
     )
 }
 
-function Like({ likess, count, decount}) {
+function Like({ likess, count, decount }) {
     if (decount) {
         return (
             <div className="flex w-[25%] " >
