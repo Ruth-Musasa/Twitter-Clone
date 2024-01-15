@@ -9,7 +9,7 @@ import Profil from './Menu/Profil'
 import TweetEditor from './component/TweetEditor'
 export default function App() {
   return (
-    <div className='flex text-[white] mx-[15%] xl:mx-12 '>
+    <div className='flex text-[white] mx-16 2xl:mx-[15%] '>
       <div className='flex w-8/12 justify-between '>
         <Router>
           <div className="flex flex-col pt-4 w-1/4 ">

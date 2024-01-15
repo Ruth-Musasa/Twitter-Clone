@@ -6,7 +6,7 @@ export default function Profil(user) {
     return (
         <div className="w-full ml-24 h-full " >
             <div className="flex space-x-4 border-x-[1px] border-b-[1px] border-gray-900 p-4">
-                <a href='/'><img src="src/assets/Icons/Reply.svg" alt="" /></a>
+                <a href='/'><svg xmlns="http://www.w3.org/2000/svg" className='mt-4 mx-4' height="16" width="14" viewBox="0 0 448 512"><path fill="#ffffff" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" /></svg></a>
                 <div>
                     <h2>Ruth Musasa</h2>
                     <span className="text-zinc-500">1 post</span>
