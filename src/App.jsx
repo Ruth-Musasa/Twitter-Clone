@@ -9,10 +9,10 @@ import Profil from './Menu/Profil'
 import TweetEditor from './component/TweetEditor'
 export default function App() {
   return (
-    <div className='flex text-[white] mx-16 2xl:mx-[15%] '>
-      <div className='flex w-8/12 justify-between '>
+    <div className='flex text-[white] md:mx-16  2xl:mx-[15%] '>
+      <div className='flex 2xl:w-8/12 md:w-8/12  justify-between w-full '>
         <Router>
-          <div className="flex flex-col pt-4 w-1/4 ">
+          <div className="flex flex-col md:pt-4 md:w-1/4 invisible md:visible">
             <div className='fixed space-y-52'>
               <ElementNav source='src/assets/Icons/Twitter.svg' />
               <Link to='/'>  <ElementNav title='Home' source='src/assets/Icons/Home-Fill.svg' /></Link>
@@ -23,7 +23,7 @@ export default function App() {
               <Link to='/List'>  <ElementNav title='List' source='src/assets/Icons/Lists.svg' /></Link>
               <Link to='/Profile'>   <ElementNav title='Profile' source='src/assets/Icons/Profile.svg' /></Link>
               <Link to='/More'>   <ElementNav title='More' source='src/assets/Icons/More.svg' /> </Link>
-              <Link to='/Tweet'><button type="button" className='btn-primary h-14 w-56 text-lg font-bold xl:w-40'>Tweet</button></Link>
+              <Link to='/Tweet'><button type="button" className='btn-primary h-14 w-56 text-lg font-bold md:w-40'>Tweet</button></Link>
               <div>
                 <Link to='/Profile'>  <FollowList src="src/assets/profile-pic(1).png" classe="h-full bottom-0 left-0" name='Ruth Musasa' link='@R_Muss' private='src/assets/Icons/Private.svg' /></Link>
               </div>
@@ -36,7 +36,7 @@ export default function App() {
           </Routes>
         </Router>
       </div>
-      <div className='flex-auto w-3/12  p-4 ml-6'>
+      <div className='flex-auto md:w-3/12  md:p-4 md:ml-6 invisible md:visible'>
         <div className='fixed'>
           <SearchTweet />
           <ContendTrend name='Trends for you' icon='yes'>
