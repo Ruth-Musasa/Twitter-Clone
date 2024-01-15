@@ -23,7 +23,7 @@ export default function App() {
               <Link to='/List'>  <ElementNav title='List' source='src/assets/Icons/Lists.svg' /></Link>
               <Link to='/Profile'>   <ElementNav title='Profile' source='src/assets/Icons/Profile.svg' /></Link>
               <Link to='/More'>   <ElementNav title='More' source='src/assets/Icons/More.svg' /> </Link>
-              <Link to='/Tweet'><button type="button" className='btn-primary h-14 w-56 text-lg font-bold md:w-40'>Tweet</button></Link>
+              <Link to='/Tweet'><button type="button" className='btn-primary h-14 w-56 text-lg font-bold 2xl:w-52 md:w-40'>Tweet</button></Link>
               <div>
                 <Link to='/Profile'>  <FollowList src="src/assets/profile-pic(1).png" classe="h-full bottom-0 left-0" name='Ruth Musasa' link='@R_Muss' private='src/assets/Icons/Private.svg' /></Link>
               </div>
