@@ -9,6 +9,7 @@ import Profil from './Menu/Profil'
 import TweetEditor from './component/TweetEditor'
 import Explore from './Menu/Explore'
 import Message from './Menu/Message'
+import ErrorFct from './Menu/ErrorPage'
 export default function App() {
   return (
     <div className='flex text-[white] md:mx-16  2xl:mx-[15%] '>
@@ -33,11 +34,13 @@ export default function App() {
           </div>
           <Routes>
             <Route path='/' Component={Home} />
+            <Route path='/Explore' Component={Explore} />
+            <Route path='/Notification' Component={ErrorFct} />
+            <Route path='/Message' Component={Message} />
+            <Route path='/Bookmarks' Component={ErrorFct} />
+            <Route path='/List' Component={ErrorFct} />
             <Route path='/Profile' Component={Profil} />
             <Route path='/Tweet' Component={TweetEditor} />
-            <Route path='/Explore' Component={Explore}/>
-            <Route path='/Notification' Component={Message}/>
-            <Route path='/Message' Component={Message}/>
           </Routes>
         </Router>
       </div>
