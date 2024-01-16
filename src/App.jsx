@@ -8,6 +8,7 @@ import SearchTweet from './component/SearchTweet'
 import Profil from './Menu/Profil'
 import TweetEditor from './component/TweetEditor'
 import Explore from './Menu/Explore'
+import Message from './Menu/Message'
 export default function App() {
   return (
     <div className='flex text-[white] md:mx-16  2xl:mx-[15%] '>
@@ -35,6 +36,8 @@ export default function App() {
             <Route path='/Profile' Component={Profil} />
             <Route path='/Tweet' Component={TweetEditor} />
             <Route path='/Explore' Component={Explore}/>
+            <Route path='/Notification' Component={Message}/>
+            <Route path='/Message' Component={Message}/>
           </Routes>
         </Router>
       </div>

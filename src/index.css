@@ -9,4 +9,7 @@
   .borderContent{
     @apply flex justify-between border-x-[1px] border-b-[1px] border-gray-900 p-4  ;
   }
+  .menuContent{
+    @apply flex-auto w-5/12 h-2/4 2xl:ml-6  ;
+  }
 }
