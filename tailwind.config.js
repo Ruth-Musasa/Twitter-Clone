@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        '459px': '459px',
+      },
       margin: {
         '15%': '15%',
         '-72px': '-72px'
