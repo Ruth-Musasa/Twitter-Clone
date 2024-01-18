@@ -14,7 +14,7 @@ export default function Profil(user) {
                 </div>
             </div>
             <div className="bg-gray h-52 border-x-[1px] border-b-[1px] border-gray-900 bg-stone-800  bg-center">
-                <img src="src/assets/Img.png" className=" h-52 w-full" alt="photo de couverture" />
+                <img src="src/assets/Aesthetic Twitter Header.png" className=" h-52 w-full" alt="photo de couverture" />
             </div>
             <div className=" border-x-[1px] border-b-[1px] border-gray-900 space-y-3.5 px-6">
                 <div className="flex justify-between">
@@ -53,6 +53,7 @@ export default function Profil(user) {
                 </div>
             </div>
             <div className="border-x-[1px] border-b-[1px] border-gray-900 p-4">
+                <h2 className="text-2xl font-bold">Who to follow</h2>
                 <FollowList src='src/assets/image 1.png' name='The New York Times' link='@nyTimes' btn='yes' />
                 <FollowList src='src/assets/Profile-Photo (1).svg' name='CNN' link='@CNN' btn='yes' />
                 <FollowList src='src/assets/Profile-Photo.png' name='Twiter' link='@Twiter' btn='yes' />
