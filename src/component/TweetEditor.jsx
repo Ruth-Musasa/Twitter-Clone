@@ -1,7 +1,7 @@
 
 export default function TweetEditor(props) {
     return (
-        <div className="borderContent h-[119px]">
+        <div className="borderContent h-[119px] pb-8">
             <div className="flex-auto w-[15%]" >
                 <img src="src/assets/profile-pic(1).png" alt="Photo_utilisateur" className="rounded-full h-12 w-12" />
             </div>
@@ -10,8 +10,9 @@ export default function TweetEditor(props) {
                 </div>
                 <div className="flex justify-between ">
                     <div className="flex justify-between" >
-                        <button type="button">
-                            <img src="src/assets/Icons/Media.svg" alt="" />
+                        <button type="button relative">
+                            <input type="file" name="image" id="image" className="absolute w-6 opacity-0" />
+                            <img className='' src="src/assets/Icons/Media.svg" alt="" />
                         </button>
                         <button type="button">
                             <img className='px-3.5' src="src/assets/Icons/Gif.svg" alt="" />
@@ -23,12 +24,13 @@ export default function TweetEditor(props) {
                             <img className='px-3.5' src="src/assets/Icons/Emoji.svg" alt="" />
                         </button>
                         <button type="button">
-                            <img src="src/assets/Icons/Schedule.svg" alt="" />
+                            <img  src="src/assets/Icons/Schedule.svg" alt="" />
                         </button>
                     </div>
-                    <button className="btn-primary h-9 w-20">Tweet</button>
+                    <button className="btn-primary h-9 w-20 mt-4">Tweet</button>
                 </div>
             </div>
         </div>
     )
 }
+

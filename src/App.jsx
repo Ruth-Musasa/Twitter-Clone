@@ -13,10 +13,10 @@ import ErrorFct from './Menu/ErrorPage'
 export default function App() {
   return (
     <div className='flex text-[white] lg:mx-16 2xl:mx-[15%] '>
-      <div className='flex 2xl:w-8/12 lg:w-8/12  justify-between'>
+      <div className='flex 2xl:w-8/12 lg:w-8/12  justify-between w-full '>
         <Router>
-          <div className="flex flex-col xl:flex-col lg:pt-4 lg:w-1/4 lg:visible">
-            <div className='fixed space-y-52'>
+          <div className="flex xl:flex-col lg:pt-4 lg:w-1/4 lg:visible">
+            <div className='fixed 2xl:space-y-52 space-y-3'>
               <ElementNav source='src/assets/Icons/Twitter.svg' />
               <Link to='/'>  <ElementNav title='Home' source='src/assets/Icons/Home-Fill.svg' /></Link>
               <Link to='/Explore'>  <ElementNav title='Explore' source='src/assets/Icons/Explore.svg' /></Link>
@@ -26,9 +26,11 @@ export default function App() {
               <Link to='/List'>  <ElementNav title='List' source='src/assets/Icons/Lists.svg' /></Link>
               <Link to='/Profile'>   <ElementNav title='Profile' source='src/assets/Icons/Profile.svg' /></Link>
               <Link to='/More'>   <ElementNav title='More' source='src/assets/Icons/More.svg' /> </Link>
-              <Link to='/Tweet'><button type="button" className='lg:btn-primary lg:h-14 2xl:w-56 lg:text-lg lg:font-bold 2xl:w-52 lg:w-40 invisible lg:visible'>Tweet</button></Link>
+              <Link to='/Tweet'><button type="button" className='lg:btn-primary lg:h-14 lg:text-lg lg:font-bold 2xl:w-56 lg:w-40 invisible lg:visible'>Tweet</button></Link>
               <div>
-                <Link to='/Profile'>  <FollowList src="src/assets/profile-pic(1).png" classe="h-full bottom-0 left-0 " name='Ruth Musasa' link='@R_Muss' private='src/assets/Icons/Private.svg' /></Link>
+                <Link to='/Profile'>
+                  <FollowList src="src/assets/profile-pic(1).png" classe="" name='Ruth Musasa' link='@R_Muss' private='src/assets/Icons/Private.svg' />
+                </Link>
               </div>
             </div>
           </div>
