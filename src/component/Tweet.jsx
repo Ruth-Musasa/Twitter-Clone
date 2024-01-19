@@ -5,7 +5,7 @@ export default function Tweet({ tweets }) {
         "source": "Ruth",
         "date": 1604299903000,
         "favorites": "0",
-        "id": "1323155810910982145",
+        "id": "1324155810910982145",
         "isVerified": true,
         "replies": "0",
         "retweets": "0",
@@ -31,7 +31,7 @@ export default function Tweet({ tweets }) {
                                     <span className="text-gray-500">@{tweet.source ?? user.source}  . {`${date(tweet.date)}` ?? `${date(user.date)}` }  </span>
                                 </div>
                                 <div><p className=" py-3 text-zinc-300 text-base leading-5"> {tweet.text} </p></div>
-                                {(tweet.image) && <img src={tweet.image} alt="Photo_utilisateur" className=" max-w-[459px] rounded-lg" />}
+                                {(tweet.image) && <img src={tweet.image} alt="Photo_utilisateur" className=" max-h-[459px] rounded-lg" />}
                                 <TweetAction comment={tweet.replies ?? user.replies} repost={tweet.retweets ?? user.retweets} like={tweet.favorites ?? user.favorites}  />
                             </div>
                         </div>

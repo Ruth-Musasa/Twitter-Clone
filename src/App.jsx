@@ -12,10 +12,10 @@ import Message from './Menu/Message'
 import ErrorFct from './Menu/ErrorPage'
 export default function App() {
   return (
-    <div className='flex text-[white] md:mx-16  2xl:mx-[15%] '>
-      <div className='flex 2xl:w-8/12 md:w-8/12  justify-between w-full '>
+    <div className='flex text-[white] lg:mx-16 2xl:mx-[15%] '>
+      <div className='flex 2xl:w-8/12 lg:w-8/12  justify-between'>
         <Router>
-          <div className="flex flex-col md:pt-4 md:w-1/4 invisible md:visible">
+          <div className="flex flex-col xl:flex-col lg:pt-4 lg:w-1/4 lg:visible">
             <div className='fixed space-y-52'>
               <ElementNav source='src/assets/Icons/Twitter.svg' />
               <Link to='/'>  <ElementNav title='Home' source='src/assets/Icons/Home-Fill.svg' /></Link>
@@ -26,9 +26,9 @@ export default function App() {
               <Link to='/List'>  <ElementNav title='List' source='src/assets/Icons/Lists.svg' /></Link>
               <Link to='/Profile'>   <ElementNav title='Profile' source='src/assets/Icons/Profile.svg' /></Link>
               <Link to='/More'>   <ElementNav title='More' source='src/assets/Icons/More.svg' /> </Link>
-              <Link to='/Tweet'><button type="button" className='btn-primary h-14 w-56 text-lg font-bold 2xl:w-52 md:w-40'>Tweet</button></Link>
+              <Link to='/Tweet'><button type="button" className='lg:btn-primary lg:h-14 2xl:w-56 lg:text-lg lg:font-bold 2xl:w-52 lg:w-40 invisible lg:visible'>Tweet</button></Link>
               <div>
-                <Link to='/Profile'>  <FollowList src="src/assets/profile-pic(1).png" classe="h-full bottom-0 left-0" name='Ruth Musasa' link='@R_Muss' private='src/assets/Icons/Private.svg' /></Link>
+                <Link to='/Profile'>  <FollowList src="src/assets/profile-pic(1).png" classe="h-full bottom-0 left-0 " name='Ruth Musasa' link='@R_Muss' private='src/assets/Icons/Private.svg' /></Link>
               </div>
             </div>
           </div>
@@ -44,7 +44,7 @@ export default function App() {
           </Routes>
         </Router>
       </div>
-      <div className='flex-auto md:w-3/12  md:p-4 md:ml-6 invisible md:visible'>
+      <div className='flex-auto lg:w-3/12  lg:p-4 lg:ml-6 invisible lg:visible'>
         <div className='fixed'>
           <SearchTweet />
           <ContendTrend name='Trends for you' icon='yes'>

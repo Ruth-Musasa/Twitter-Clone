@@ -1,6 +1,6 @@
 export default function FollowList(props) {
     return (
-        <div className="flex justify-between py-4 leading-6 hover:bg-zinc-900 p-4 ">
+        <div className="flex justify-between py-4 leading-6 hover:bg-zinc-900 p-4 invisible lg:visible">
             <div className="flex ">
                 <div> <img src={props.src} alt="" className={`rounded-full h-12 w-12 ${props.classe} `} /> </div>
                 <div className="pl-2">
