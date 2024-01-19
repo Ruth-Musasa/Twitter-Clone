@@ -37,7 +37,7 @@ export default function TweetAction(props) {
         }
     }
     return (
-        <div className="flex justify-between text-gray-500 text-xs text-center py-2.5" >
+        <div className="flex justify-between text-gray-500 text-xs text-center pt-4" >
             <div className="flex w-[25%] hover:text-blue-500 ">
                 <button > <img className='hover:bg-blue-950 hover:rounded-full' src="src/assets/Icons/Reply.svg" alt="" /></button>
                 <span className="pl-3.5 pt-1.5" > {propsTraitement(props.comment)}</span>
@@ -47,7 +47,7 @@ export default function TweetAction(props) {
                 <span className="pl-3.5 pt-2"> {propsTraitement(props.repost)}</span>
             </div>
             <Like likess={likess} count={count} liked={liked} />
-            <div className="flex w-[25%] "> <button  className='hover:bg-blue-950 hover:rounded-full'> <img src="src/assets/Icons/Share.svg" alt="" /></button>
+            <div className="flex w-[25%] "> <button  className='hover:bg-cyan-950 hover:rounded-full p-1'> <img src="src/assets/Icons/Share.svg" alt="" /></button>
             </div>
         </div>
     )
