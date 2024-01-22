@@ -45,22 +45,14 @@ export default function Profil(user) {
                     <span className="flex text-zinc-500"><strong className="text-white pr-2 ">12K </strong> Followers</span>
                 </div>
                 <div className="flex justify-between h-10 text-zinc-500 text-lg ">
-                    <Link className='border-b-4 border-b-sky-700 text-white h-10 ' to='/Posts'>Posts </Link>
+                    <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='/Posts'>Posts </Link>
                     <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='/Replies'>Replies</Link>
                     <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='/Highlight'>Highlight</Link>
                     <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='/Medias'>Medias</Link>
                     <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='/Likes'>Likes</Link>
                 </div>
             </div>
-            <div className="border-x-[1px] border-b-[1px] border-gray-900 p-4">
-                <h2 className="text-2xl font-bold">Who to follow</h2>
-                <FollowList src='src/assets/image 1.png' name='The New York Times' link='@nyTimes' btn='yes' />
-                <FollowList src='src/assets/Profile-Photo (1).svg' name='CNN' link='@CNN' btn='yes' />
-                <FollowList src='src/assets/Profile-Photo.png' name='Twiter' link='@Twiter' btn='yes' />
-                <FollowList src='src/assets/IMG_0382.jpg' name='Musasa' link='@Ebondo' btn='yes' />
-                <FollowList src='src/assets/image 1.png' name='The New York Times' link='@nyTimes' btn='yes' />
-            </div>
+            {user.children}
         </div>
     )
 }
-
