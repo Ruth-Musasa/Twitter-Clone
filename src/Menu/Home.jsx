@@ -6,6 +6,8 @@ import axios from 'axios'
 export default function Home() {
     const [tweets, setTweets] = useState([]);
     const [image, setImage] = useState('');
+    const [users, setUsers] = useState([]);
+
     useEffect(() => {
         const dataJson = 'https://my-json-server.typicode.com/amare53/twiterdb/posts'
         axios.get(dataJson)
@@ -13,14 +15,14 @@ export default function Home() {
                 setTweets(res.data)
             })
     }, [])
-    const [user, setUser] = useState([]);
     useEffect(() => {
         const dataJson = 'https://my-json-server.typicode.com/amare53/twiterdb/users'
         axios.get(dataJson)
             .then(res => {
-                setUser(res.data)
+                setUsers(res.data)
             })
     }, [])
+
     const handleSubmit = (e) => {
         e.preventDefault()
         const form = e.target
@@ -67,7 +69,9 @@ export default function Home() {
                     tweets.map((data) => <Tweet 
                     tweet={data} 
                     key={data.id} 
-                    avatar={data.thumbnailProfil}
+                    avatar={users.find((user)=>user.id==data.userId)?.thumbnailProfil}
+                    name={users.find((user)=>user.id==data.userId)?.name}
+                    username={users.find((user)=>user.id==data.userId)?.username}
                     />)
                 }
             </div>

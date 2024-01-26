@@ -1,5 +1,5 @@
 import TweetAction from "./TweetAction"
-export default function Tweet({ tweet , avatar }) {
+export default function Tweet({ tweet , avatar, name,username }) {
     let date = (data) => {
         return new Date(data).toDateString()
     }
@@ -10,11 +10,11 @@ export default function Tweet({ tweet , avatar }) {
             </div>
             <div className="flex-auto w-[85%]">
                 <div className="flex">
-                    <h3 className="font-bold">{tweet.title}</h3>
+                    <h3 className="font-bold">{name}</h3>
                     {tweet.isVerified && <img src="src/assets/Icons/Verified.svg" className="px-1.5 " alt="" />}
-                    <span className="text-gray-500">@{tweet.userId}</span>
+                    <span className="text-gray-500">@{username}</span>
                 </div>
-                <div><p className=" py-3 text-zinc-300 text-base leading-5"> {tweet.body} </p></div>
+                <div><p className=" py-3 text-zinc-300 text-base leading-5"> {tweet.title} {tweet.body} </p></div>
                 {(tweet.thumbnailUrl) && <img src={tweet.thumbnailUrl} alt="Photo_tweeter" className=" min-h-[459px] max-w-[459px] rounded-lg" />}
                 <TweetAction comment={tweet.replies} repost={tweet.repost} like={tweet.like} />
             </div>
