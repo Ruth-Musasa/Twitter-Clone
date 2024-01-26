@@ -1,15 +1,22 @@
-import App from "../App"
-import ContendTrend from "../component/ContendTrend"
-import FollowList from "../component/FollowList"
-import Tweet from "../component/Tweet"
+import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
-export default function Profil(user) {
+import axios from "axios"
+export default function Profil(users) {
+    const [user, setUser] = useState([]);
+    useEffect(() => {
+        const dataJson = 'https://my-json-server.typicode.com/amare53/twiterdb/users'
+        axios.get(dataJson)
+            .then(res => {
+                setUser(res.data)
+            })
+    }, [])
     return (
+        user.map((user) => 
         <div className="menuContent" >
             <div className="flex space-x-4 border-x-[1px] border-b-[1px] border-gray-900 p-4">
                 <Link to='/'><svg xmlns="http://www.w3.org/2000/svg" className='mt-4 mx-4' height="16" width="14" viewBox="0 0 448 512"><path fill="#ffffff" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" /></svg></Link>
                 <div>
-                    <h2>Ruth Musasa</h2>
+                    <h2>{user.name} </h2>
                     <span className="text-zinc-500">1 post</span>
                 </div>
             </div>
@@ -19,12 +26,12 @@ export default function Profil(user) {
             <div className=" border-x-[1px] border-b-[1px] border-gray-900 space-y-3.5 px-6">
                 <div className="flex justify-between">
                     <div className="h-36 w-36 mt-[-72px] ">
-                        <img src="src/assets/profile-pic(1).png" alt="" />
+                        <img src={user.thumbnailProfil} alt="" />
                     </div>
                     <button className="w-28 h-9 border-[1px] rounded-full shadow-md hover:bg-zinc-800 border-gray-900 mt-4 " type="button">Edit profil</button>
                 </div>
-                <h2>Ruth Musasa</h2>
-                <span className="text-zinc-500">@R_Muss</span>
+                <h2>{user.name} </h2>
+                <span className="text-zinc-500">{user.userName}</span>
                 <div className="flex text-zinc-500">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g clip-path="url(#clip0_7_307)">
@@ -38,7 +45,7 @@ export default function Profil(user) {
                             </clipPath>
                         </defs>
                     </svg>
-                    <span className="pl-2 "> Joined January 2024</span>
+                    <span className="pl-2 ">{user.Joined} </span>
                 </div>
                 <div className="flex space-x-4 pb-4">
                     <span className="flex text-zinc-500"> <strong className="text-white pr-2 ">50 </strong> Following</span>
@@ -52,7 +59,7 @@ export default function Profil(user) {
                     <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='/Likes'>Likes</Link>
                 </div>
             </div>
-            {user.children}
+            {users.children}
         </div>
-    )
+    ))
 }

@@ -1,11 +1,18 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Header from '../component/Header'
 import TweetEditor from '../component/TweetEditor'
 import Tweet from '../component/Tweet'
-import tweetsFake from '/src/assets/tweets-x.json'
+import axios from 'axios'
 export default function Home() {
-    const [tweets, setTweets] = useState(tweetsFake);
+    const [tweets, setTweets] = useState([]);
     const [image, setImage] = useState('');
+    useEffect(() => {
+        const dataJson = 'https://my-json-server.typicode.com/amare53/twiterdb/posts'
+        axios.get(dataJson)
+            .then(res => {
+                setTweets(res.data)
+            })
+}, [])
     const handleSubmit = (e) => {
         e.preventDefault()
         const form = e.target
@@ -14,16 +21,17 @@ export default function Home() {
         form.reset()
         uploadImage(tweet.image);
         let formatedTweet = {
-            "author_avatar": "src/assets/profile-pic(1).png",
-            "source": "Ruth",
-            "text": tweet.text,
+            "url": "src/assets/profile-pic(1).png",
+            "title": "Ruth",
+            'userId': 'R_Muss122001',
+            "body": tweet.body,
             "date": new Date(),
-            "favorites": "0",
+            "like": "0",
             "id": "1324155810910982145",
             "isVerified": true,
             "replies": "0",
-            "retweets": "0",
-            "image": image
+            "repost": "0",
+            "thumbnailUrl": image
         }
         setTweets([formatedTweet, ...tweets])
     }
