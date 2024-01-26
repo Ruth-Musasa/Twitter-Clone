@@ -1,6 +1,6 @@
 export default function TrendingList(props) {
     return (
-        <div className="py-4 leading-6 p-4 hover:bg-zinc-900">
+        <div className=" leading-6 px-4 py-2 hover:bg-zinc-900">
             <div className="flex justify-between">
                 <h5 className="text-zinc-500">Trending in Turkey</h5>
                 <button type="button"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

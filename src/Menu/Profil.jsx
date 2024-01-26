@@ -4,14 +4,13 @@ import axios from "axios"
 export default function Profil(users) {
     const [user, setUser] = useState([]);
     useEffect(() => {
-        const dataJson = 'https://my-json-server.typicode.com/amare53/twiterdb/users'
+        const dataJson = 'https://my-json-server.typicode.com/amare53/twiterdb/users/1'
         axios.get(dataJson)
             .then(res => {
                 setUser(res.data)
             })
     }, [])
     return (
-        user.map((user) => 
         <div className="menuContent" >
             <div className="flex space-x-4 border-x-[1px] border-b-[1px] border-gray-900 p-4">
                 <Link to='/'><svg xmlns="http://www.w3.org/2000/svg" className='mt-4 mx-4' height="16" width="14" viewBox="0 0 448 512"><path fill="#ffffff" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" /></svg></Link>
@@ -26,7 +25,7 @@ export default function Profil(users) {
             <div className=" border-x-[1px] border-b-[1px] border-gray-900 space-y-3.5 px-6">
                 <div className="flex justify-between">
                     <div className="h-36 w-36 mt-[-72px] ">
-                        <img src={user.thumbnailProfil} alt="" />
+                        <img  className=' rounded-full' src={user.thumbnailProfil} alt="" />
                     </div>
                     <button className="w-28 h-9 border-[1px] rounded-full shadow-md hover:bg-zinc-800 border-gray-900 mt-4 " type="button">Edit profil</button>
                 </div>
@@ -61,5 +60,5 @@ export default function Profil(users) {
             </div>
             {users.children}
         </div>
-    ))
+    )
 }

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import Header from '../component/Header'
 import TweetEditor from '../component/TweetEditor'
 import Tweet from '../component/Tweet'
@@ -12,7 +12,15 @@ export default function Home() {
             .then(res => {
                 setTweets(res.data)
             })
-}, [])
+    }, [])
+    const [user, setUser] = useState([]);
+    useEffect(() => {
+        const dataJson = 'https://my-json-server.typicode.com/amare53/twiterdb/users'
+        axios.get(dataJson)
+            .then(res => {
+                setUser(res.data)
+            })
+    }, [])
     const handleSubmit = (e) => {
         e.preventDefault()
         const form = e.target
@@ -56,7 +64,11 @@ export default function Home() {
             </form>
             <div>
                 {
-                    tweets.map((tweet) => <Tweet tweet={tweet} key={tweet.id} />)
+                    tweets.map((data) => <Tweet 
+                    tweet={data} 
+                    key={data.id} 
+                    avatar={data.thumbnailProfil}
+                    />)
                 }
             </div>
         </div>

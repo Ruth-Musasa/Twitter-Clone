@@ -1,12 +1,12 @@
 import TweetAction from "./TweetAction"
-export default function Tweet({ tweet }) {
+export default function Tweet({ tweet , avatar }) {
     let date = (data) => {
         return new Date(data).toDateString()
     }
     return (
         <div className='borderContent'>
             <div className="flex-auto w-[15%]" >
-                <img src={tweet.url} alt="Photo_utilisateur" className="rounded-full h-12 w-12" />
+                <img src={avatar} alt="Photo_utilisateur" className="rounded-full h-12 w-12" />
             </div>
             <div className="flex-auto w-[85%]">
                 <div className="flex">
@@ -15,7 +15,7 @@ export default function Tweet({ tweet }) {
                     <span className="text-gray-500">@{tweet.userId}</span>
                 </div>
                 <div><p className=" py-3 text-zinc-300 text-base leading-5"> {tweet.body} </p></div>
-                {(tweet.thumbnailUrl) && <img src={tweet.thumbnailUrl} alt="Photo_tweeter" className=" max-h-[459px] rounded-lg" />}
+                {(tweet.thumbnailUrl) && <img src={tweet.thumbnailUrl} alt="Photo_tweeter" className=" min-h-[459px] max-w-[459px] rounded-lg" />}
                 <TweetAction comment={tweet.replies} repost={tweet.repost} like={tweet.like} />
             </div>
         </div>
