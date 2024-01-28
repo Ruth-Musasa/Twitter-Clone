@@ -1,15 +1,7 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, createContext } from 'react'
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
 import axios from "axios"
-export default function Profil(users) {
-    const [user, setUser] = useState([]);
-    useEffect(() => {
-        const dataJson = 'https://my-json-server.typicode.com/amare53/twiterdb/users/1'
-        axios.get(dataJson)
-            .then(res => {
-                setUser(res.data)
-            })
-    }, [])
+export default function Profil({user}, users) {
     return (
         <div className="menuContent" >
             <div className="flex space-x-4 border-x-[1px] border-b-[1px] border-gray-900 p-4">

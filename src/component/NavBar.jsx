@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
 import FollowList from './FollowList'
-export default function NavBar() {
+export default function NavBar({user}) {
     return (
         <div className='fixed 2xl:space-y-52 space-y-3'>
               <ElementNav source='src/assets/Icons/Twitter.svg' />
@@ -15,7 +15,7 @@ export default function NavBar() {
               <Link to='/Tweet'><button type="button" className='lg:btn-primary lg:h-14 lg:text-lg lg:font-bold 2xl:w-56 lg:w-40 invisible lg:visible'>Tweet</button></Link>
               <div>
                 <Link to='/Profile'>
-                  <FollowList src="src/assets/profile-pic(1).png" classe="" name='Ruth Musasa' link='@R_Muss' private='src/assets/Icons/Private.svg' />
+                  <FollowList src={user.profil} classe="" name={user.name} link={'@'+user.username} private='src/assets/Icons/Private.svg' />
                 </Link>
               </div>
             </div>

@@ -1,9 +1,9 @@
-
-export default function TweetEditor(props) {
+import { useContext , useState } from "react"
+export default function TweetEditor({user}) {
     return (
         <div className="borderContent h-[119px] ">
             <div className="flex-auto w-[15%]" >
-                <img src="src/assets/profile-pic(1).png" alt="Photo_utilisateur" className="rounded-full h-12 w-12" />
+                <img src={user.profil} alt="Photo_utilisateur" className="rounded-full h-12 w-12" />
             </div>
             <div className="flex-auto w-[85%]">
                 <div className="h-3/5"> <textarea placeholder="What’s happening?" name="body" id='body' cols="30" rows="10" className="w-full h-5/6 bg-black text-xl focus:border-blue-400 outline-none"></textarea>

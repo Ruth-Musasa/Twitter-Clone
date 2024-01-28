@@ -3,7 +3,8 @@ import Header from '../component/Header'
 import TweetEditor from '../component/TweetEditor'
 import Tweet from '../component/Tweet'
 import axios from 'axios'
-export default function Home() {
+import ProfilPost from './ProfilOptions'
+export default function Home({user}) {
     const [tweets, setTweets] = useState([]);
     const [image, setImage] = useState('');
     const [users, setUsers] = useState([]);
@@ -30,20 +31,21 @@ export default function Home() {
         let tweet = Object.fromEntries(data)
         form.reset()
         uploadImage(tweet.image);
-        let formatedTweet = {
-            "url": "src/assets/profile-pic(1).png",
-            "title": "Ruth",
-            'userId': 'R_Muss122001',
+        let userTweet = 
+        {  
+            'id'	: `${user.id}`,
+            'profil' : user.profil,
+            'name' : `${user.name}`,
+            'username': user.username,
             "body": tweet.body,
             "date": new Date(),
             "like": "0",
-            "id": "1324155810910982145",
             "isVerified": true,
             "replies": "0",
             "repost": "0",
             "thumbnailUrl": image
         }
-        setTweets([formatedTweet, ...tweets])
+        setTweets([userTweet, ...tweets])
     }
     const uploadImage = (file) => {
         if (file.size > 0) {
@@ -62,16 +64,20 @@ export default function Home() {
         <div className='menuContent'>
             <Header name='Home' src='src/assets/Icons/Timeline-Prop.svg' />
             <form onSubmit={handleSubmit} >
-                <TweetEditor />
+                <TweetEditor user={user} />
             </form>
             <div>
                 {
                     tweets.map((data) => <Tweet 
                     tweet={data} 
                     key={data.id} 
-                    avatar={users.find((user)=>user.id==data.userId)?.thumbnailProfil}
-                    name={users.find((user)=>user.id==data.userId)?.name}
-                    username={users.find((user)=>user.id==data.userId)?.username}
+                    avatars={users.find((user)=>user.id==data.userId)?.thumbnailProfil}
+                    names={users.find((user)=>user.id==data.userId)?.name}
+                    usernames={users.find((user)=>user.id==data.userId)?.username}
+                    profil={data.profil}
+                    userName={data.username}
+                    name={data.name}
+                    userLike={data.like}
                     />)
                 }
             </div>
