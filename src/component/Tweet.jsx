@@ -1,5 +1,5 @@
 import TweetAction from "./TweetAction"
-export default function Tweet({ tweet , avatars, names,usernames , profil,  userName, name}) {
+export default function Tweet({ tweet , avatars, names,usernames , profil,  userName, name,  body}) {
     let date = (data) => {
         return new Date(data).toDateString()
     }

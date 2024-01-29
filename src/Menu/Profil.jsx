@@ -46,7 +46,7 @@ export default function Profil() {
                     <span className="flex text-zinc-500"><strong className="text-white pr-2 ">12K </strong> Followers</span>
                 </div>
                 <div className="flex justify-between h-10 text-zinc-500 text-lg ">
-                    <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='Posts'>Posts </Link>
+                    <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to=''>Posts </Link>
                     <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='Replies'>Replies</Link>
                     <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='Highlight'>Highlight</Link>
                     <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='Medias'>Medias</Link>
@@ -54,7 +54,7 @@ export default function Profil() {
                 </div>
             </div>
             <Routes>
-                <Route path='Posts' element={<ProfilPost />} />
+                <Route path='' element={<ProfilPost />} />
                 <Route path='Replies' element={<ProfilOpions />} />
                 < Route path='Highlight' element={<ProfilPost />} />
                 <Route path='Medias' element={<ProfilOpions />} />

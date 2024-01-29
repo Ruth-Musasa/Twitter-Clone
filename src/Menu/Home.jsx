@@ -4,7 +4,9 @@ import TweetEditor from '../component/TweetEditor'
 import Tweet from '../component/Tweet'
 import axios from 'axios'
 import ProfilPost from './ProfilOptions'
-export default function Home({user}) {
+import { ProphilUser } from '../App'
+export default function Home() {
+    const user = useContext(ProphilUser)
     const [tweets, setTweets] = useState([]);
     const [image, setImage] = useState('');
     const [users, setUsers] = useState([]);
@@ -64,7 +66,7 @@ export default function Home({user}) {
         <div className='menuContent'>
             <Header name='Home' src='/src/assets/Icons/Timeline-Prop.svg' />
             <form onSubmit={handleSubmit} >
-                <TweetEditor user={user} />
+                <TweetEditor />
             </form>
             <div>
                 {
