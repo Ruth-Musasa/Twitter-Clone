@@ -1,5 +1,7 @@
 import { useContext , useState } from "react"
-export default function TweetEditor({user}) {
+import { ProphilUser } from "../App"
+export default function TweetEditor() {
+    const user= useContext(ProphilUser)
     return (
         <div className="borderContent h-[119px] ">
             <div className="flex-auto w-[15%]" >

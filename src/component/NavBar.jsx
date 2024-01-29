@@ -1,6 +1,9 @@
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
 import FollowList from './FollowList'
-export default function NavBar({user}) {
+import { ProphilUser } from '../App'
+import { useContext } from 'react'
+export default function NavBar() {
+    const user = useContext(ProphilUser)
     return (
         <div className='fixed 2xl:space-y-52 space-y-3'>
               <ElementNav source='src/assets/Icons/Twitter.svg' />

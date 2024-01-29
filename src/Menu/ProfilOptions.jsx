@@ -1,9 +1,7 @@
 import Profil from "./Profil"
 import FollowList from "../component/FollowList"
-export default function ProfilPost({ user }, tweet) {
-    console.log(user);
+export default function ProfilPost(tweet) {
     return (
-        <Profil user={user} >
             <div className="border-x-[1px] border-b-[1px] border-gray-900 p-4">
                 <h2 className="text-2xl font-bold">Who to follow</h2>
                 <FollowList src='src/assets/image 1.png' name='The New York Times' link='@nyTimes' btn='yes' />
@@ -11,17 +9,12 @@ export default function ProfilPost({ user }, tweet) {
                 <FollowList src='src/assets/Profile-Photo.png' name='Twiter' link='@Twiter' btn='yes' />
                 <p className=" py-3 text-zinc-300 text-base leading-5"> {tweet.title} {tweet.body} </p>
             </div>
-        </Profil>
 
     )
 }
-export function ProfilOpions({user}) {
-    console.log(user);
-
+export function ProfilOpions() {
     return (
-        <Profil user={user}>
         <img className='border-[1px] border-gray-900 w-full pt-24 self-start' src="src/assets/undraw_page_not_found_re_e9o6.svg" alt="" />
-        </Profil>
 
     )
 }

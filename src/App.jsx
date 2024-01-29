@@ -13,7 +13,7 @@ import { useContext, createContext, useState, useEffect } from 'react'
 import axios from 'axios'
 export const ProphilUser = createContext()
 export default function App() {
-  const [user, setUser] = useState([]);
+  const [user, setUser] = useState({});
   useEffect(() => {
     const dataJson = 'https://my-json-server.typicode.com/amare53/twiterdb/users/1'
     axios.get(dataJson)
@@ -30,17 +30,15 @@ export default function App() {
               <NavBar user={user} />
             </div>
             <Routes>
-              <Route path='/' element={<Home user={user} />} />
+              <Route path='/' element={<Home  />} />
               <Route path='/Explore' element={<Explore />} />
               <Route path='/Notification' element={<ErrorFct />} />
               <Route path='/Message' element={<Message />} />
               <Route path='/Bookmarks' element={<ErrorFct />} />
               <Route path='/List' element={<ErrorFct />} />
-              <Route path='/Profile' element={<Profil user={user} />} >
-              </Route>
+              <Route path='/Profile/*' element={<Profil  />} />
               <Route path='/Tweet' element={<TweetEditor />} />
-              <Route path='/Posts' element={<ProfilPost user={user} />} />
-              <Route path='/Replies' element={<ProfilOpions user={user} />} />
+
             </Routes>
           </Router>
         </div>

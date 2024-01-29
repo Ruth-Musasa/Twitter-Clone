@@ -1,7 +1,10 @@
-import { useState, useEffect, createContext } from 'react'
+import { useState, useEffect, createContext, useContext } from 'react'
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
 import axios from "axios"
-export default function Profil({user}, users) {
+import { ProphilUser } from '../App'
+import ProfilPost, { ProfilOpions } from './ProfilOptions'
+export default function Profil() {
+    const user = useContext(ProphilUser)
     return (
         <div className="menuContent" >
             <div className="flex space-x-4 border-x-[1px] border-b-[1px] border-gray-900 p-4">
@@ -17,7 +20,7 @@ export default function Profil({user}, users) {
             <div className=" border-x-[1px] border-b-[1px] border-gray-900 space-y-3.5 px-6">
                 <div className="flex justify-between">
                     <div className="h-36 w-36 mt-[-72px] ">
-                        <img  className=' rounded-full' src={user.thumbnailProfil} alt="" />
+                        <img className=' rounded-full' src={user.thumbnailProfil} alt="" />
                     </div>
                     <button className="w-28 h-9 border-[1px] rounded-full shadow-md hover:bg-zinc-800 border-gray-900 mt-4 " type="button">Edit profil</button>
                 </div>
@@ -43,14 +46,18 @@ export default function Profil({user}, users) {
                     <span className="flex text-zinc-500"><strong className="text-white pr-2 ">12K </strong> Followers</span>
                 </div>
                 <div className="flex justify-between h-10 text-zinc-500 text-lg ">
-                    <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='/Posts'>Posts </Link>
-                    <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='/Replies'>Replies</Link>
+                    <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='Posts'>Posts </Link>
+                    <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='Replies'>Replies</Link>
                     <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='/Highlight'>Highlight</Link>
                     <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='/Medias'>Medias</Link>
                     <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='/Likes'>Likes</Link>
                 </div>
             </div>
-            {users.children}
+            <Routes>
+                <Route path='Posts' element={<ProfilPost />} />
+                <Route path='Replies' element={<ProfilOpions/>} />
+            </Routes>
+
         </div>
     )
 }
