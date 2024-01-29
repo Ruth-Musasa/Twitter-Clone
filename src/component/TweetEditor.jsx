@@ -14,19 +14,19 @@ export default function TweetEditor() {
                     <div className="flex justify-between" >
                         <button type="button relative">
                             <input type="file" name="image" id="image" className="absolute w-6 opacity-0" />
-                            <img className='' src="src/assets/Icons/Media.svg" alt="" />
+                            <img className='' src="/src/assets/Icons/Media.svg" alt="" />
                         </button>
                         <button type="button">
-                            <img className='px-3.5' src="src/assets/Icons/Gif.svg" alt="" />
+                            <img className='px-3.5' src="/src/assets/Icons/Gif.svg" alt="" />
                         </button>
                         <button type="button">
-                            <img src="src/assets/Icons/Poll.svg" alt="" />
+                            <img src="/src/assets/Icons/Poll.svg" alt="" />
                         </button>
                         <button type="button">
-                            <img className='px-3.5' src="src/assets/Icons/Emoji.svg" alt="" />
+                            <img className='px-3.5' src="/src/assets/Icons/Emoji.svg" alt="" />
                         </button>
                         <button type="button">
-                            <img  src="src/assets/Icons/Schedule.svg" alt="" />
+                            <img  src="/src/assets/Icons/Schedule.svg" alt="" />
                         </button>
                     </div>
                     <button className="btn-primary h-9 w-20">Tweet</button>

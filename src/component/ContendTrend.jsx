@@ -9,7 +9,7 @@ export default function ContendTrend(props) {
                     className="text-xl font-bold py-2 px-4 "> <h2>{props.name}</h2>
                 </div>
                 <div className="p-4">
-                    {(props.icon) && <button type="button"><img src="src/assets/Icons/Settings.svg" alt="Photo_icon" /></button>}
+                    {(props.icon) && <button type="button"><img src="/src/assets/Icons/Settings.svg" alt="Photo_icon" /></button>}
                     {(!props.icon) && <></>}
                 </div>
             </div>
@@ -31,9 +31,9 @@ export function Trend() {
                 <TrendingList />
             </ContendTrend>
             <ContendTrend name='Who to follow'>
-                <FollowList src='src/assets/image 1.png' name='The New York Times' link='@nyTimes' btn='yes' />
-                <FollowList src='src/assets/Profile-Photo (1).svg' name='CNN' link='@CNN' btn='yes' />
-                <FollowList src='src/assets/Profile-Photo (1).svg' name='CNN' link='@CNN' btn='yes' />
+                <FollowList src='/src/assets/image 1.png' name='The New York Times' link='@nyTimes' btn='yes' />
+                <FollowList src='/src/assets/Profile-Photo (1).svg' name='CNN' link='@CNN' btn='yes' />
+                <FollowList src='/src/assets/Profile-Photo (1).svg' name='CNN' link='@CNN' btn='yes' />
             </ContendTrend>
             <div className='text-zinc-500 text-sm text-justify p-4'>
                 Terms of Service  Privacy Policy  Cookie Policy <br /> Imprint Ads info More ... © 2021  Twitter, Inc.

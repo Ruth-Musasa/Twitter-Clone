@@ -62,7 +62,7 @@ export default function Home({user}) {
     }
     return (
         <div className='menuContent'>
-            <Header name='Home' src='src/assets/Icons/Timeline-Prop.svg' />
+            <Header name='Home' src='/src/assets/Icons/Timeline-Prop.svg' />
             <form onSubmit={handleSubmit} >
                 <TweetEditor user={user} />
             </form>

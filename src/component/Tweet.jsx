@@ -11,7 +11,7 @@ export default function Tweet({ tweet , avatars, names,usernames , profil,  user
             <div className="flex-auto w-[85%]">
                 <div className="flex">
                     <h3 className="font-bold">{names || name}</h3>
-                    {tweet.isVerified && <img src="src/assets/Icons/Verified.svg" className="px-1.5 " alt="" />}
+                    {tweet.isVerified && <img src="/src/assets/Icons/Verified.svg" className="px-1.5 " alt="" />}
                     <span className="text-gray-500">@{usernames ||  userName}</span>
                 </div>
                 <div><p className=" py-3 text-zinc-300 text-base leading-5"> {tweet.title} {tweet.body} </p></div>

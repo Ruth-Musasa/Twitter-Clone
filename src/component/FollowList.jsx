@@ -7,7 +7,7 @@ export default function FollowList(props) {
                     <div>{props.name}</div>
                     <span className="text-zinc-500">{props.link} </span>
                 </div>
-                <img src={props.private ?? 'src/assets/Icons/Verified.svg'} alt="" className="h-5" />
+                <img src={props.private ?? '/src/assets/Icons/Verified.svg'} alt="" className="h-5" />
             </div>
             <div>
                 {(props.btn) && <button type="submit" className=" w-20 h-8 bg-white text-black rounded-full shadow-md hover:bg-black-600 hover:bg-stone-400"> Follow</button>}

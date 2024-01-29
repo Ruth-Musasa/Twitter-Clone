@@ -15,7 +15,7 @@ export default function Profil() {
                 </div>
             </div>
             <div className="bg-gray h-52 border-x-[1px] border-b-[1px] border-gray-900 bg-stone-800  bg-center">
-                <img src="src/assets/Aesthetic Twitter Header.png" className=" h-52 w-full" alt="photo de couverture" />
+                <img src="/src/assets/Aesthetic Twitter Header.png" className=" h-52 w-full" alt="photo de couverture" />
             </div>
             <div className=" border-x-[1px] border-b-[1px] border-gray-900 space-y-3.5 px-6">
                 <div className="flex justify-between">
@@ -48,14 +48,17 @@ export default function Profil() {
                 <div className="flex justify-between h-10 text-zinc-500 text-lg ">
                     <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='Posts'>Posts </Link>
                     <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='Replies'>Replies</Link>
-                    <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='/Highlight'>Highlight</Link>
-                    <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='/Medias'>Medias</Link>
-                    <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='/Likes'>Likes</Link>
+                    <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='Highlight'>Highlight</Link>
+                    <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='Medias'>Medias</Link>
+                    <Link className='hover:border-b-4 hover:border-b-sky-700 hover:text-white hover:h-10 ' to='Likes'>Likes</Link>
                 </div>
             </div>
             <Routes>
                 <Route path='Posts' element={<ProfilPost />} />
-                <Route path='Replies' element={<ProfilOpions/>} />
+                <Route path='Replies' element={<ProfilOpions />} />
+                < Route path='Highlight' element={<ProfilPost />} />
+                <Route path='Medias' element={<ProfilOpions />} />
+                <Route path='Likes' element={<ProfilOpions />} />
             </Routes>
 
         </div>
