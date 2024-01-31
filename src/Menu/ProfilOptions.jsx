@@ -1,4 +1,3 @@
-import Profil from "./Profil"
 import FollowList from "../component/FollowList"
 export default function ProfilPost(tweet) {
     return (

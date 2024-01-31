@@ -1,5 +1,4 @@
 import Header from "../component/Header";
-
 export default function Message() {
     return (
         <div className="menuContent">

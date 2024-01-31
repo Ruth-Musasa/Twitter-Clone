@@ -3,7 +3,6 @@ import Header from '../component/Header'
 import TweetEditor from '../component/TweetEditor'
 import Tweet from '../component/Tweet'
 import axios from 'axios'
-import ProfilPost from './ProfilOptions'
 import { ProphilUser } from '../App'
 export default function Home() {
     const user = useContext(ProphilUser)
