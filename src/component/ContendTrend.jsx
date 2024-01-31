@@ -20,7 +20,6 @@ export default function ContendTrend(props) {
         </div>
     )
 }
-
 export function Trend() {
     return (
         <div className='fixed'>
