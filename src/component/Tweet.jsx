@@ -15,7 +15,7 @@ export default function Tweet({ tweet , avatars, names,usernames , profil,  user
                     <span className="text-gray-500">@{usernames ||  userName}</span>
                 </div>
                 <div><p className=" py-3 text-zinc-300 text-base leading-5"> {tweet.title} {tweet.body} </p></div>
-                {(tweet.thumbnailUrl) && <img src={tweet.thumbnailUrl} alt="Photo_tweeter" className=" min-h-[459px] max-w-[459px] rounded-lg" />}
+                {(tweet.thumbnailUrl) && <img src={tweet.thumbnailUrl} alt="Photo_tweeter" className=" min-h-[459px]  rounded-lg" />}
                 <TweetAction comment={tweet.replies} repost={tweet.repost} like={tweet.like} />
             </div>
         </div>

@@ -9,7 +9,6 @@ export default function Home() {
     const [tweets, setTweets] = useState([]);
     const [image, setImage] = useState('');
     const [users, setUsers] = useState([]);
-
     useEffect(() => {
         const dataJson = 'https://my-json-server.typicode.com/amare53/twiterdb/posts'
         axios.get(dataJson)

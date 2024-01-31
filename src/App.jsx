@@ -25,7 +25,7 @@ export default function App() {
         <div className='flex 2xl:w-8/12 lg:w-8/12  justify-between w-full '>
           <Router>
             <div className="flex xl:flex-col lg:pt-4 lg:w-1/4 lg:visible lg:mr-4">
-              <NavBar user={user} />
+              <NavBar />
             </div>
             <Routes>
               <Route path='/' element={<Home  />} />
@@ -36,7 +36,6 @@ export default function App() {
               <Route path='/List' element={<ErrorFct />} />
               <Route path='/Profile/*' element={<Profil  />} />
               <Route path='/Tweet' element={<TweetEditor />} />
-
             </Routes>
           </Router>
         </div>

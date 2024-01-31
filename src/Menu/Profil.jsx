@@ -1,10 +1,25 @@
 import { useState, useEffect, createContext, useContext } from 'react'
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
-import axios from "axios"
 import { ProphilUser } from '../App'
 import ProfilPost, { ProfilOpions } from './ProfilOptions'
+import EditProfil from './EditProfil'
+import ReactModal from 'react-modal'
 export default function Profil() {
     const user = useContext(ProphilUser)
+    const [isEdit, SetIsEdit] = useState(false);
+    const handleEdit = () => {
+        SetIsEdit(!isEdit);
+    }
+    const customStyles = {
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)',
+        }
+    }
     return (
         <div className="menuContent" >
             <div className="flex space-x-4 border-x-[1px] border-b-[1px] border-gray-900 p-4">
@@ -22,7 +37,7 @@ export default function Profil() {
                     <div className="h-36 w-36 mt-[-72px] ">
                         <img className=' rounded-full' src={user.thumbnailProfil} alt="" />
                     </div>
-                    <button className="w-28 h-9 border-[1px] rounded-full shadow-md hover:bg-zinc-800 border-gray-900 mt-4 " type="button">Edit profil</button>
+                    <button onClick={handleEdit} className="w-28 h-9 border-[1px] rounded-full shadow-md hover:bg-zinc-800 border-gray-900 mt-4 " type="button">Edit profil</button>
                 </div>
                 <h2>{user.name} </h2>
                 <span className="text-zinc-500">{user.userName}</span>
@@ -33,11 +48,7 @@ export default function Profil() {
                             <path d="M15.5 10.4C12.1 10.4 9.29999 13.2 9.29999 16.6C9.29999 20 12.1 22.8 15.5 22.8C18.9 22.8 21.7 20 21.7 16.6C21.7 13.2 18.9 10.4 15.5 10.4ZM15.5 21.4C12.9 21.4 10.8 19.3 10.8 16.7C10.8 14.1 12.9 12 15.5 12C18.1 12 20.2 14.1 20.2 16.7C20.2 19.2 18.1 21.4 15.5 21.4Z" fill="#6b7280" />
                             <path d="M18.9 18.7C18.8 18.9 18.5 19.1 18.3 19.1C18.2 19.1 18 19.1 17.9 19L14.8 17V14C14.8 13.6 15.1 13.2 15.6 13.2C16 13.2 16.4 13.5 16.4 14V16.2L18.8 17.7C19 17.9 19.1 18.3 18.9 18.7Z" fill="#6b7280" />
                         </g>
-                        <defs>
-                            <clipPath id="clip0_7_307">
-                                <rect width="24" height="24" fill="white" />
-                            </clipPath>
-                        </defs>
+                        <defs> <clipPath id="clip0_7_307"> <rect width="24" height="24" fill="white" /> </clipPath> </defs>
                     </svg>
                     <span className="pl-2 ">{user.Joined} </span>
                 </div>
@@ -60,7 +71,13 @@ export default function Profil() {
                 <Route path='Medias' element={<ProfilOpions />} />
                 <Route path='Likes' element={<ProfilOpions />} />
             </Routes>
-
+            <ReactModal
+                isOpen={isEdit}
+                style={customStyles}
+                onRequestClose={handleEdit}
+                shouldCloseOnOverlayClick={true} >
+                <EditProfil />
+            </ReactModal>
         </div>
     )
 }
