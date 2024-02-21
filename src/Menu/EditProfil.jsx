@@ -1,4 +1,8 @@
+import React, { useContext, useState } from 'react';
+import { ProphilUser } from '../App';
 export default function EditProfil() {
+    const user = useContext(ProphilUser)
+    const [info, setInfo] = useState(user);
     const handleChange = (e) => {
         e.preventDefault()
         const form = e.target
@@ -13,7 +17,10 @@ export default function EditProfil() {
             "isVerified": true,
             "thumbnailUrl": user.image
         }
+        setInfo(changeUser);
+        console.log(changeUser);
     }
+   
     return (
         <div className=" p-4 ">
             <h2 className="text-2xl font-bold pb-10">Edit Profil</h2>
@@ -30,7 +37,7 @@ export default function EditProfil() {
                     <label htmlFor=""> Username</label>
                     <input type="text" className=' text-xl h-12 border-[1px] border-gray-900 p-4 w-full' name="username" id='username' />
                 </div>
-                <button className="btn-primary h-12 w-40 mt-10">Edit profil</button>
+                <button className="btn-primary h-12 w-40 mt-10" >Edit profil</button>
             </form>
         </div>
     )
