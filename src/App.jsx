@@ -3,27 +3,71 @@ import Home from './Menu/Home'
 import NavBar from './component/NavBar'
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom'
 import Profil from './Menu/Profil'
-import TweetEditor from './component/TweetEditor'
 import Explore from './Menu/Explore'
 import Message from './Menu/Message'
 import ErrorFct from './Menu/ErrorPage'
 import { useContext, createContext, useState, useEffect } from 'react'
 import axios from 'axios'
+import ReactModal from 'react-modal'
+import TweetEditor from './component/TweetEditor'
+import Connexion from './component/connexion'
 export const ProphilUser = createContext()
 export default function App() {
   const [user, setUser] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
-  useEffect(() => {
-    const dataJson = 'https://my-json-server.typicode.com/amare53/twiterdb/users/1'
-    axios.get(dataJson)
-      .then(res => {
-        setUser(res.data);
-        setIsLoading(false);
+  // const [isLoading, setIsLoading] = useState(true);
+  const [isLogin, SetIsLogin] = useState(false);
+  // const login = useContext([])
+  const handleChange = async (e) => {
+    e.preventDefault()
+    try {
+      const form = e.target
+      let data = new FormData(form);
+      let login = Object.fromEntries(data)
+      form.reset()
+      const credentials =
+      {
+        "name": login.name,
+        "email": login.email,
+        "password": login.code
+      }
+      console.log(credentials);
+
+      const url = 'http://localhost:3000/users/login'
+      const rep = await axios.post(url, {
+        email: credentials.email,
+        password: credentials.password
       })
-  }, [])
-  if (isLoading) {
-    return <p className='text-white'>loading</p>
+
+      if (rep.status == 200) {
+        const { id, token } = rep.data;
+        console.log(id, 'OK');
+        SetIsLogin(true);
+        setUser(id);
+      }
+      else{
+        console.error('Auth err');
+      }
+    }
+    catch (error) {
+      console.error('Axios err');
+    }
   }
+  const handleLogin = () => {
+    SetIsLogin(!isLogin);
+  }
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    }
+  }
+  // if (isLoading) {
+  //   return <p className='text-white'>loading</p>
+  // }
   if (user == null) {
     return (
       <div className='flex text-white xl:my-48 mx-[15%] space-x-72' >
@@ -39,9 +83,18 @@ export default function App() {
           </div>
           <div className='w-1/2'>
             <h3 className='text-xl pb-6'>Vous avez déjà un compte ?</h3>
-            <button className='w-full text-white rounded-full shadow-md hover:bg-zinc-700 border-[1px] border-gray-900 py-2 text-center'>Se connecter</button>
+            <button className='w-full text-white rounded-full shadow-md hover:bg-zinc-700 border-[1px] border-gray-900 py-2 text-center' onClick={handleLogin}>Se connecter</button>
           </div>
         </div>
+        <ReactModal
+          isOpen={isLogin}
+          style={customStyles}
+          onRequestClose={handleLogin}
+          shouldCloseOnOverlayClick={true} >
+          <form onSubmit={handleChange} className="" action='http://localhost:3000/logins/login' method='post'>
+            <Connexion />
+          </form>
+        </ReactModal>
       </div>
     )
   }

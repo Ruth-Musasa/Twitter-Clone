@@ -20,7 +20,6 @@ export default function EditProfil() {
         setInfo(changeUser);
         console.log(changeUser);
     }
-   
     return (
         <div className=" p-4 ">
             <h2 className="text-2xl font-bold pb-10">Edit Profil</h2>
